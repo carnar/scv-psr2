@@ -46,6 +46,17 @@ Options
 + 80 characters rule
 + Translate tabs to spaces
 
+## Show/Hide line number
+Go to *Preferences -> Key Bindings - User* and add this code:
+
+    {
+        "keys": ["ctrl+shift+l"],
+        "command": "toggle_setting",
+        "args":
+        {
+            "setting": "line_numbers"
+        }
+    }
 
 ## DocBlockr User Preferences
 File
