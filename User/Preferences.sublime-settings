@@ -1,14 +1,14 @@
 {
-	"color_scheme": "Packages/Dayle Rees Color Schemes/sublime/peacock.tmTheme",
-	"ignored_packages":
-	[
-		"Vintage"
-	],
+	// Padding line like Taylor Otwel
 	"line_padding_bottom": 6,
 	"line_padding_top": 6,
+
+	// Set ruler to 80 characters
 	"rulers":
 	[
 		80
 	],
-	"translate_tabs_to_spaces": true
+
+	// Spaces better than tabs
+	"translate_tabs_to_spaces": true,
 }

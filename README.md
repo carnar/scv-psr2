@@ -1,69 +1,75 @@
-# SCV
-Sublime Cool Version are configurations for Sublime Text 3 and PHP developers, inspired in Laravel community.
+# SCV PSR-2
+Sublime Cool Version are configurations for Sublime Text 3 and PHP developers inspired in Laravel community. Include snippets for PSR-2 coding standard used by Laravel 5.1.
 
-## Installation
-1. Clone this repo into Sublime Text Packages directory. Preferences -> Browse Packages...
-2. Copy all files from Packages/SCV/User to Packages/User.
-3. Install the next packages.
+## Configurations
+1. Clone this repo into Sublime Text Packages directory. **Preferences -> Browse Packages...**
+2. Basic configuration
+3. Packages
+4. Snippets and Key Bindings
+    4.1 Show/Hide line numbers
 
-### Packages
-Install with Package Control
+## 2. Basic configuration
+Add this configuration
 
-+ SideBarEnhancements
-+ DocBlockr
-+ AdvancedNewFile
-+ Dayle Rees Color Schemes
-+ Markdown Preview
+    // Line padding like Taylor Otwel
+    "line_padding_bottom": 6,
+    "line_padding_top": 6,
 
-Optional
-+ PackageResourceViewer
-+ PHP Getters and Setters
+    // Set ruler to 80 characters
+    "rulers":
+    [
+        80
+    ],
 
-## Final Files Structure
-    Packages
-    ├── SCV
-    │   ├── Snippets
-    │   │   ├── *.sublime-snippet
-    │   ├── User
-    │   │   ├── Base File.sublime-settings
-    │   │   └── Preferences.sublime-settings
-    │   ├── Default (Linux).sublime-keymap
-    │   ├── Default (Linux).sublime-mousemap
-    │   └── README.md
-    └── User
-        ├── Base File.sublime-settings
-        └── Preferences.sublime-settings
+    // Spaces better than tabs
+    "translate_tabs_to_spaces": true,
+
+into Preferences file **Preferences -> Settings-User**
+
+    Packages/User/Preferences.sublime-settings
 
 
-## Sublime Text User preferences
-File
+## 3. Packages
+This is the list of useful packages for Sublime Text, you can install all of them via Package Control.
 
-    Preferences.sublime-settings
+### 3.1 SideBarEnhancements 
+This is the best sidebar for sublime text, includes many options missing in the original sidebar.
 
-Options
-+ Theme like Laravel's website.
-+ Line spacing like Taylor Otwell.
-+ 80 characters rule
-+ Translate tabs to spaces
+### 3.2 AdvancedNewFile 
+Fast file creator typing the path and filename.
 
-## Show/Hide line number
-Go to *Preferences -> Key Bindings - User* and add this code:
+#### Configuration
+Copy this code
 
     {
-        "keys": ["ctrl+shift+l"],
-        "command": "toggle_setting",
-        "args":
-        {
-            "setting": "line_numbers"
-        }
-    }
+        "keys": ["super+n"], "command": "advanced_new_file_new"
+    },
 
-## DocBlockr User Preferences
-File
+into
 
-    Base File.sublime-settings
+    Package/User/Default (linux).sublime-keymap 
 
-Generate documentation like this:
+and type **super + n** for launch the file creator box.
+
+### 3.3 Dayle Rees Color Schemes
+Huge [color scheme repository](https://daylerees.github.io/) for Sublime Text.
+
+**Peacock** theme looks like Laravel website.
+
+### 3.4 DocBlockr 
+Easy PHP and JS documentation generator.
+
+#### Configuration
+
+Copy this file
+    
+    Packages/scv-psr2/User/Base File.sublime-settings 
+
+into this folder
+
+    Packages/User/
+
+This configuration generates documentation like this:
 
     /**
      * [sendSmsMessage description]
@@ -82,7 +88,23 @@ Generate documentation like this:
         ]);     
     }
 
-## Snippets
+### 3.5 PHP Getters and Setters 
+Getters and Setters generator
+
+
+## 4. Snippets and Key Bindings
+
+### 4.1 Show/Hide line numbers
+Go to **Preferences -> Key Bindings - User** and add this code:
+
+    {
+        "keys": ["ctrl+shift+l"],
+        "command": "toggle_setting",
+        "args":
+        {
+            "setting": "line_numbers"
+        }
+    }
 
 | Key binding | Description |
 |----------|------|
@@ -98,6 +120,7 @@ Generate documentation like this:
 | prof + tab | protected function |
 | prif + tab | private function |
 | ipubf + tab | inline public function definition |
-| iprof + tab | inline protected function definition |
-| iprif + tab | inline private function definition |
 | ctrl + shift + click | Go to class/method definition |
+| ctrl + shift + l | Show/hide line numbers |
+| phpn + tab | In a new php file, open php tag and namespace holder |
+
