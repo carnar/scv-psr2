@@ -1,6 +1,5 @@
 <snippet>
     <content><![CDATA[<?${TM_PHP_OPEN_TAG:php}
-
 namespace $1;
 
 $0
